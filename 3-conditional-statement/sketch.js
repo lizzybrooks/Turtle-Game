@@ -13,6 +13,7 @@ let b;
 let anotherFlotsam = [];
 
 let flotsams = [];
+let flotsamXvalues = [50,100,150,200,250,300,350,400,450,500];
 
 //
 function setup() {
@@ -41,14 +42,16 @@ function draw(){
 	for (let i = 0; i < bars.length; i++) {
 	 	      bars[i].drawBar();
        	  bars[i].moveBar();
-          //anotherFlotsam[i].drawTrash();
-          //anotherFlotsam[i].moveTrash();
+
         }
 //
-          if (frameCount % 25 == 0) {
-     let b = new Flotsam(random(0,width), 0, -1);
+          if (frameCount % 70 == 0) {
+     let b = new Flotsam(flotsamXvalues[int(random(0,flotsamXvalues.length))],20, -1);
      flotsams.push(b);
-    // console.log(Flotsams); //print the Turtles array to the console
+     // let c = new Flotsam(flotsamXvalues[int(random(0,flotsamXvalues.length))],20, -1);
+     // flotsams.push(c);
+     // let d = new Flotsam(flotsamXvalues[int(random(0,flotsamXvalues.length))],20, -1);
+     // flotsams.push(d);
    }
 
 //	draw all the Turtles in that array
@@ -150,3 +153,4 @@ class Bar {
   		this.y = this.y+this.speed;
   }
 }
+
